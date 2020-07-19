@@ -3,7 +3,7 @@ import Searchbar from '../Searchbar';
 import SearchForm from '../SearchForm';
 import ImageGallery from '../ImageGallery';
 import Button from '../../common/Button';
-import Spinner from '../Spinner';
+import Spinner from '../../common/Spinner';
 import Modal from '../../common/Modal';
 import galleryApi from '../../services/gallery-api';
 import styles from './App.module.css';
