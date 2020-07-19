@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import Searchbar from '../Searchbar';
 import SearchForm from '../SearchForm';
 import ImageGallery from '../ImageGallery';
-import Button from '../Button';
+import Button from '../../common/Button';
 import Spinner from '../Spinner';
-import Modal from '../Modal';
+import Modal from '../../common/Modal';
 import galleryApi from '../../services/gallery-api';
 import styles from './App.module.css';
 
@@ -80,9 +80,11 @@ class App extends Component {
           <SearchForm onSubmit={this.onChangeQuery} />
         </Searchbar>
 
-        {error && <h1>Oops!!! Something went wrong :(</h1>}
-
-        <ImageGallery images={images} onClick={this.onOpenModal} />
+        {!error ? (
+          <ImageGallery images={images} onClick={this.onOpenModal} />
+        ) : (
+          <h1>Oops!!! Something went wrong :(</h1>
+        )}
 
         {isLoading && <Spinner />}
 
